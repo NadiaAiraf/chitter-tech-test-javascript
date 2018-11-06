@@ -3,11 +3,13 @@ function ChitterApi() {
     return new Promise(function(resolve, reject) {
       var articles;
       $.get("https://chitter-backend-api.herokuapp.com/peeps",function(data) {
-        articles = data.response.results;
+        console.log(data);
+        for (var i = 0; i < data.length; i++) {
+          document.write(data[i].body)
+          document.write(" - " + data[i].user.handle)
+          document.write('<br>')
+        }
       })
-      setTimeout(function(){
-        resolve(articles);
-      },500);
     });
   }
 }
