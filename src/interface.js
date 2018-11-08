@@ -5,7 +5,7 @@ $(document).ready(function() {
     $.get('https://chitter-backend-api.herokuapp.com/peeps', function(data) {
       console.log(data);
       for (var i = 0; i < data.length; i++) {
-        peepHandler.createPeep(data[i].body)
+        peepHandler.createPeep(data[i].body, i)
       }
     })
   }
